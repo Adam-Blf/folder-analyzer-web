@@ -16,4 +16,4 @@ Projet web qui permet d’analyser un dossier local et de générer un fichier *
 2. Clique sur **“Choisir un dossier”**.
 3. Coche ou décoche les options.
 4. Clique sur **Analyser**.
-5. Le JSON s’affiche ; clique sur **Télécharger JSON**.# folder-analyzer-web
+5. Le JSON s’affiche ; clique sur **Télécharger JSON**.
