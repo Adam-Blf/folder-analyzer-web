@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Folder Analyzer Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header>
+    <h1>Folder Analyzer Web</h1>
+    <p>Analyse un dossier local et génère un JSON décrivant sa structure, avec une vue arborescente interactive.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>1. Sélection du dossier</h2>
+      <p>Chrome ou Edge recommandés.</p>
+      <input id="dirPicker" type="file" webkitdirectory directory multiple />
+      <div class="options">
+        <label>
+          <input type="checkbox" id="withContent" />
+          Inclure le contenu des fichiers texte
+        </label>
+        <label>
+          Limite par fichier en octets
+          <input id="maxBytes" type="number" value="64000" min="1024" step="1024" />
+        </label>
+        <label>
+          Extensions autorisées pour le contenu
+          <input id="extFilter" type="text" placeholder=".md,.txt,.js,.ts,.py,.json,.html,.css" />
+        </label>
+        <label>
+          Dossiers à ignorer
+          <input id="ignoreList" type="text" value="node_modules,.git,.next,.cache,dist,build,coverage" />
+        </label>
+      </div>
+      <button id="analyzeBtn">Analyser</button>
+    </section>
+
+    <section class="panel">
+      <h2>2. Résultat</h2>
+      <div class="actions">
+        <button id="downloadBtn" disabled>Télécharger JSON</button>
+        <span id="stats"></span>
+      </div>
+
+      <div class="view-tabs">
+        <button id="tabTree" class="active">Arborescence</button>
+        <button id="tabJson">JSON</button>
+      </div>
+
+      <!-- Vue arborescente -->
+      <div id="treeView" class="treeView">
+        <div class="tree-actions">
+          <button id="expandAllBtn" disabled>Tout ouvrir</button>
+          <button id="collapseAllBtn" disabled>Tout fermer</button>
+        </div>
+        <div id="tree" class="tree" aria-live="polite"></div>
+      </div>
+
+      <!-- Vue JSON brute -->
+      <pre id="output" class="output hidden" aria-live="polite"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projet réalisé par <strong>Adam Beloucif</strong> 2025</p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
