@@ -1,8 +1,86 @@
-# Folder Analyzer Web
+# Folder Analyzer Web - Analyseur de Structure de Dossiers / Folder Structure Analyzer
+
+[🇫🇷 Version Française](#version-française) | [🇬🇧 English Version](#english-version)
+
+---
+
+## <a name="version-française"></a>🇫🇷 Version Française
+
+Outil web **100% côté client** pour analyser les structures de répertoires locaux. Générez des vues arborescentes interactives et des rapports JSON téléchargeables des hiérarchies de dossiers avec extraction optionnelle du contenu des fichiers—le tout sans télécharger de données vers un serveur.
+
+### ✨ Fonctionnalités
+
+- 📂 **Analyse Récursive** : explorez les structures de dossiers imbriquées
+- 🌳 **Vue Arborescente Interactive** : visualisation extensible/repliable avec compteurs de fichiers
+- 📄 **Extraction de Contenu** : lecture optionnelle du contenu des fichiers texte (limite de taille configurable)
+- 🚫 **Filtrage Intelligent** : ignore les répertoires courants (`.git`, `node_modules`, etc.) et filtre par extension
+- 💾 **Export JSON** : téléchargez des rapports de structure complets pour traitement ultérieur
+- 🔒 **100% Côté Client** : aucun backend, aucun téléversement—vos données ne quittent jamais votre machine
+- ⚡ **Zéro Dépendances** : JavaScript vanilla, HTML et CSS
+
+### 🛠️ Stack Technologique
+
+| Composant | Technologie | Objectif |
+|-----------|-------------|----------|
+| **Frontend** | JavaScript Vanilla (ES6+) | Logique d'analyse principale |
+| **File API** | Attribut `webkitdirectory` | Accès aux répertoires locaux |
+| **UI** | HTML5 + CSS3 | Arborescence interactive et contrôles |
+| **Build** | Aucun | Fichiers statiques—ouvrez `index.html` directement |
+
+### 📁 Structure du Projet
+
+```
+folder-analyzer-web/
+├── index.html        # Page d'application principale
+├── app.js            # Logique d'analyse et de rendu d'arborescence
+├── style.css         # Style UI
+└── README.md
+```
+
+### 🚀 Démarrage Rapide
+
+#### Prérequis
+
+- Navigateur moderne avec support File System Access :
+  - ✅ Google Chrome 13+
+  - ✅ Microsoft Edge 79+
+  - ✅ Opera 15+
+  - ⚠️ Firefox (support limité—peut nécessiter sélection manuelle)
+  - ❌ Safari (pas de support `webkitdirectory`)
+
+#### Utilisation
+
+1. **Ouvrir l'Outil** : ouvrez `index.html` dans Chrome ou Edge
+2. **Sélectionner Répertoire** : cliquez **"Choose a folder"**
+3. **Configurer Options** :
+   - ☑️ Extraire contenu fichiers
+   - 📏 Taille max contenu (défaut: 64KB)
+   - 🔤 Filtre d'extensions (ex: `js,py,md`)
+   - 🚫 Ignorer dossiers (défaut: `.git,node_modules`)
+4. **Analyser & Exporter** : cliquez **"Analyze"** → téléchargez JSON
+
+### 🔒 Sécurité
+
+- **Traitement Local** : aucune donnée n'est envoyée à un serveur
+- **Accès Navigateur** : nécessite autorisation utilisateur explicite
+- **Confidentialité** : aucun suivi, aucune analytique, aucun cookie
+
+### 🗺️ Feuille de Route
+
+- [ ] Support Safari (alternatives File API)
+- [ ] Export CSV/XML
+- [ ] Statistiques avancées (tailles, dates)
+- [ ] Comparaison de structures
+- [ ] Mode sombre
+- [ ] Historique de sessions
+
+---
+
+## <a name="english-version"></a>🇬🇧 English Version
 
 A **pure client-side** web tool for analyzing local directory structures. Generate interactive tree views and downloadable JSON reports of folder hierarchies with optional file content extraction—all without uploading data to any server.
 
-## ✨ Features
+### ✨ Features
 
 - 📂 **Recursive Directory Analysis**: explore nested folder structures
 - 🌳 **Interactive Tree View**: expandable/collapsible visualization with file counts
@@ -12,7 +90,7 @@ A **pure client-side** web tool for analyzing local directory structures. Genera
 - 🔒 **100% Client-Side**: no backend, no uploads—your data never leaves your machine
 - ⚡ **Zero Dependencies**: vanilla JavaScript, HTML, and CSS
 
-## 🛠️ Tech Stack
+### 🛠️ Tech Stack
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
@@ -21,7 +99,7 @@ A **pure client-side** web tool for analyzing local directory structures. Genera
 | **UI** | HTML5 + CSS3 | Interactive tree and controls |
 | **Build** | None | Static files—open `index.html` directly |
 
-## 📁 Project Structure
+### 📁 Project Structure
 
 ```
 folder-analyzer-web/
@@ -31,9 +109,10 @@ folder-analyzer-web/
 └── README.md
 ```
 
-## 🚀 Quick Start
+### 🚀 Quick Start
 
-### Prerequisites
+#### Prerequisites
+
 - Modern browser with File System Access support:
   - ✅ Google Chrome 13+
   - ✅ Microsoft Edge 79+
@@ -41,131 +120,35 @@ folder-analyzer-web/
   - ⚠️ Firefox (limited support—may require manual file selection)
   - ❌ Safari (no `webkitdirectory` support)
 
-### Usage
+#### Usage
 
-1. **Open the Tool**
-   - Clone or download this repository
-   - Open `index.html` in Chrome or Edge
-   - Or deploy to any static host (GitHub Pages, Netlify, etc.)
+1. **Open Tool**: open `index.html` in Chrome or Edge
+2. **Select Directory**: click **"Choose a folder"**
+3. **Configure Options**:
+   - ☑️ Extract file content
+   - 📏 Max content size (default: 64KB)
+   - 🔤 Extension filter (e.g., `js,py,md`)
+   - 🚫 Ignore folders (default: `.git,node_modules`)
+4. **Analyze & Export**: click **"Analyze"** → download JSON
 
-2. **Select a Directory**
-   - Click **"Choose a folder"**
-   - Browser will prompt for directory access
-   - Select the root folder you want to analyze
+### 🔒 Security
 
-3. **Configure Options**
-   - ☑️ **Extract file content**: read text files (respects size limit)
-   - 📏 **Max content size**: bytes per file (default: 64KB, max: 10MB)
-   - 🔤 **Extension filter**: comma-separated list (e.g., `js,py,md`)
-   - 🚫 **Ignore folders**: comma-separated blacklist (default: `.git,node_modules,dist,build`)
+- **Local Processing**: no data sent to servers
+- **Browser Access**: requires explicit user permission
+- **Privacy**: no tracking, no analytics, no cookies
 
-4. **Analyze & Export**
-   - Click **"Analyze"** to process the directory
-   - View results in **Tree** (interactive) or **JSON** (raw data) tabs
-   - Use **"Expand All"**/**"Collapse All"** to navigate tree view
-   - Click **"Download JSON"** to save `structure.json` locally
+### 🗺️ Roadmap
 
-## 📋 Output Format
+- [ ] Safari support (File API alternatives)
+- [ ] CSV/XML export
+- [ ] Advanced statistics (sizes, dates)
+- [ ] Structure comparison
+- [ ] Dark mode
+- [ ] Session history
 
-### JSON Structure
+### 📄 License
 
-```json
-{
-  "name": "my-project",
-  "path": "my-project",
-  "type": "directory",
-  "children": [
-    {
-      "name": "src",
-      "path": "my-project/src",
-      "type": "directory",
-      "children": [
-        {
-          "name": "index.js",
-          "path": "my-project/src/index.js",
-          "type": "file",
-          "size": 1248,
-          "content": "// File content if enabled..."
-        }
-      ]
-    }
-  ],
-  "stats": {
-    "totalFiles": 42,
-    "totalDirs": 8,
-    "totalSize": 156789,
-    "processTimeMs": 234
-  }
-}
-```
-
-### Tree View
-
-- **Folders**: 📁 icon, click to expand/collapse, show child count
-- **Files**: 📄 icon, display size in human-readable format (KB/MB)
-- **Stats Panel**: total files, directories, combined size, and analysis time
-
-## ⚙️ Configuration
-
-Edit default values in `app.js`:
-
-```javascript
-// Default max content size (bytes)
-const DEFAULT_MAX_BYTES = 64000;
-
-// Default ignored directories
-const DEFAULT_IGNORE = ['.git', 'node_modules', 'dist', 'build', '.venv', '__pycache__'];
-
-// Max allowed content size (10MB)
-const MAX_CONTENT_LIMIT = 10 * 1024 * 1024;
-```
-
-## 🔒 Security & Privacy
-
-- **No Server Communication**: all processing happens in your browser's JavaScript engine
-- **No Data Storage**: no cookies, local storage, or analytics tracking
-- **Temporary File Access**: browser releases file handles after analysis completes
-- **Content Sanitization**: extracted text is displayed as plain text (no code execution)
-
-### Security Considerations
-
-- **Large Directories**: analyzing 10,000+ files may cause browser lag or memory issues
-- **Binary Files**: content extraction skips binary data; enabling it for mixed directories is safe
-- **Sensitive Data**: while private by design, avoid analyzing folders with secrets if sharing JSON output
-
-## 🧪 Testing
-
-Test with a sample project structure:
-
-```
-test-project/
-├── README.md         (text file)
-├── package.json      (JSON data)
-├── src/
-│   ├── index.js      (JavaScript)
-│   └── utils.js
-└── node_modules/     (will be ignored by default)
-    └── ...
-```
-
-Expected outcome:
-- Tree shows `test-project`, `src`, and individual files
-- JSON includes content for `README.md`, `package.json`, and JS files (if size < limit)
-- `node_modules` excluded from analysis
-
-## 🗺️ Roadmap
-
-- [ ] **File Search**: filter tree by filename or content
-- [ ] **Syntax Highlighting**: preview code files with color coding
-- [ ] **Git Integration**: show file status (modified, untracked) if `.git` present
-- [ ] **Diff View**: compare two directory analyses
-- [ ] **Export Formats**: add CSV, Markdown tree, or HTML report options
-- [ ] **Theme Toggle**: dark mode support
-- [ ] **Mobile Support**: responsive layout for tablets (limited by API support)
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
+This project is open source. See LICENSE file for details.
 
 ---
 
