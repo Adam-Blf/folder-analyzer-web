@@ -16,6 +16,22 @@ const treeView = document.getElementById("treeView");
 const treeEl = document.getElementById("tree");
 const expandAllBtn = document.getElementById("expandAllBtn");
 const collapseAllBtn = document.getElementById("collapseAllBtn");
+const themeToggle = document.getElementById("themeToggle");
+
+// Theme Management
+if (localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light-mode');
+  if(themeToggle) themeToggle.textContent = '☀️';
+}
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    themeToggle.textContent = isLight ? '☀️' : '🌙';
+  });
+}
 
 let lastJson = null;
 
