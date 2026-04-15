@@ -167,3 +167,9 @@ This project is open source. See LICENSE file for details.
 **Repository**: [github.com/Adam-Blf/folder-analyzer-web](https://github.com/Adam-Blf/folder-analyzer-web)
 
 For bug reports or feature requests, open an issue on GitHub.
+
+---
+
+<p align="center">
+  <sub>Par <a href="https://adam.beloucif.com">Adam Beloucif</a> · Data Engineer & Fullstack Developer · <a href="https://github.com/Adam-Blf">GitHub</a></sub>
+</p>
