@@ -11,6 +11,12 @@
 
 # Folder Analyzer Web - Analyseur de Structure de Dossiers / Folder Structure Analyzer
 
+![Status](https://img.shields.io/badge/status-complete-brightgreen)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![Vercel](https://img.shields.io/badge/deploy-Vercel-000?logo=vercel&logoColor=white)
+
 [🇫🇷 Version Française](#version-française) | [🇬🇧 English Version](#english-version)
 
 ---
