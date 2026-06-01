@@ -19,7 +19,29 @@
 
 ## <a name="version-française"></a>🇫🇷 Version Française
 
-Outil web **100% côté client** pour analyser les structures de répertoires locaux. Générez des vues arborescentes interactives et des rapports JSON téléchargeables des hiérarchies de dossiers avec extraction optionnelle du contenu des fichiers—le tout sans télécharger de données vers un serveur.
+Outil web **100% côté client** pour analyser les structures de répertoires locaux. Générez des vues arborescentes interactives et des rapports JSON téléchargeables des hiérarchies de dossiers avec extraction optionnelle du contenu des fichiers, le tout sans télécharger de données vers un serveur.
+
+## Architecture
+
+```mermaid
+flowchart TB
+    HTML["index.html<br/>structure · panneaux · onglets Tree / JSON"]
+    CSS["style.css<br/>thème sombre/clair · arborescence · responsive"]
+    JS["app.js<br/>logique d'analyse vanilla ES6"]
+    Picker["input webkitdirectory<br/>sélection dossier local"]
+    Walk["analyse récursive<br/>filtrage extensions · ignore .git/node_modules"]
+    Content["lecture contenu fichiers<br/>optionnelle · limite de taille configurable"]
+    Tree["rendu arborescence<br/>extensible/repliable · compteurs"]
+    Export["export JSON<br/>téléchargement local · aucun upload"]
+
+    HTML --> CSS
+    HTML --> JS
+    JS --> Picker
+    Picker --> Walk
+    Walk --> Content
+    Walk --> Tree
+    Walk --> Export
+```
 
 ### ✨ Fonctionnalités
 
@@ -28,7 +50,7 @@ Outil web **100% côté client** pour analyser les structures de répertoires lo
 - 📄 **Extraction de Contenu** : lecture optionnelle du contenu des fichiers texte (limite de taille configurable)
 - 🚫 **Filtrage Intelligent** : ignore les répertoires courants (`.git`, `node_modules`, etc.) et filtre par extension
 - 💾 **Export JSON** : téléchargez des rapports de structure complets pour traitement ultérieur
-- 🔒 **100% Côté Client** : aucun backend, aucun téléversement—vos données ne quittent jamais votre machine
+- 🔒 **100% Côté Client** : aucun backend, aucun téléversement, vos données ne quittent jamais votre machine
 - ⚡ **Zéro Dépendances** : JavaScript vanilla, HTML et CSS
 
 ### 🛠️ Stack Technologique
@@ -38,7 +60,7 @@ Outil web **100% côté client** pour analyser les structures de répertoires lo
 | **Frontend** | JavaScript Vanilla (ES6+) | Logique d'analyse principale |
 | **File API** | Attribut `webkitdirectory` | Accès aux répertoires locaux |
 | **UI** | HTML5 + CSS3 | Arborescence interactive et contrôles |
-| **Build** | Aucun | Fichiers statiques—ouvrez `index.html` directement |
+| **Build** | Aucun | Fichiers statiques, ouvrez `index.html` directement |
 
 ### 📁 Structure du Projet
 
@@ -58,7 +80,7 @@ folder-analyzer-web/
   - ✅ Google Chrome 13+
   - ✅ Microsoft Edge 79+
   - ✅ Opera 15+
-  - ⚠️ Firefox (support limité—peut nécessiter sélection manuelle)
+  - ⚠️ Firefox (support limité, peut nécessiter sélection manuelle)
   - ❌ Safari (pas de support `webkitdirectory`)
 
 #### Utilisation
@@ -91,7 +113,7 @@ folder-analyzer-web/
 
 ## <a name="english-version"></a>🇬🇧 English Version
 
-A **pure client-side** web tool for analyzing local directory structures. Generate interactive tree views and downloadable JSON reports of folder hierarchies with optional file content extraction—all without uploading data to any server.
+A **pure client-side** web tool for analyzing local directory structures. Generate interactive tree views and downloadable JSON reports of folder hierarchies with optional file content extraction, all without uploading data to any server.
 
 ### ✨ Features
 
@@ -100,7 +122,7 @@ A **pure client-side** web tool for analyzing local directory structures. Genera
 - 📄 **Content Extraction**: optionally read text file contents (configurable size limit)
 - 🚫 **Smart Filtering**: ignore common directories (`.git`, `node_modules`, etc.) and filter by file extension
 - 💾 **JSON Export**: download complete structure reports for further processing
-- 🔒 **100% Client-Side**: no backend, no uploads—your data never leaves your machine
+- 🔒 **100% Client-Side**: no backend, no uploads, your data never leaves your machine
 - ⚡ **Zero Dependencies**: vanilla JavaScript, HTML, and CSS
 
 ### 🛠️ Tech Stack
@@ -110,7 +132,7 @@ A **pure client-side** web tool for analyzing local directory structures. Genera
 | **Frontend** | Vanilla JavaScript (ES6+) | Core analysis logic |
 | **File API** | `webkitdirectory` attribute | Local directory access |
 | **UI** | HTML5 + CSS3 | Interactive tree and controls |
-| **Build** | None | Static files—open `index.html` directly |
+| **Build** | None | Static files, open `index.html` directly |
 
 ### 📁 Project Structure
 
@@ -130,7 +152,7 @@ folder-analyzer-web/
   - ✅ Google Chrome 13+
   - ✅ Microsoft Edge 79+
   - ✅ Opera 15+
-  - ⚠️ Firefox (limited support—may require manual file selection)
+  - ⚠️ Firefox (limited support, may require manual file selection)
   - ❌ Safari (no `webkitdirectory` support)
 
 #### Usage
