@@ -25,14 +25,14 @@ Outil web **100% côté client** pour analyser les structures de répertoires lo
 
 ```mermaid
 flowchart TB
-    HTML["index.html<br/>structure · panneaux · onglets Tree / JSON"]
-    CSS["style.css<br/>thème sombre/clair · arborescence · responsive"]
+    HTML["index.html<br/>structure - panneaux - onglets Tree / JSON"]
+    CSS["style.css<br/>thème sombre/clair - arborescence - responsive"]
     JS["app.js<br/>logique d'analyse vanilla ES6"]
     Picker["input webkitdirectory<br/>sélection dossier local"]
-    Walk["analyse récursive<br/>filtrage extensions · ignore .git/node_modules"]
-    Content["lecture contenu fichiers<br/>optionnelle · limite de taille configurable"]
-    Tree["rendu arborescence<br/>extensible/repliable · compteurs"]
-    Export["export JSON<br/>téléchargement local · aucun upload"]
+    Walk["analyse récursive<br/>filtrage extensions - ignore .git/node_modules"]
+    Content["lecture contenu fichiers<br/>optionnelle - limite de taille configurable"]
+    Tree["rendu arborescence<br/>extensible/repliable - compteurs"]
+    Export["export JSON<br/>téléchargement local - aucun upload"]
 
     HTML --> CSS
     HTML --> JS
@@ -195,7 +195,7 @@ For bug reports or feature requests, open an issue on GitHub.
 ---
 
 <p align="center">
-  <sub>Par <a href="https://adam.beloucif.com">Adam Beloucif</a> · Data Engineer & Fullstack Developer · <a href="https://github.com/Adam-Blf">GitHub</a> · <a href="https://www.linkedin.com/in/adambeloucif/">LinkedIn</a></sub>
+  <sub>Par <a href="https://adam.beloucif.com">Adam Beloucif</a> - Data Engineer & Fullstack Developer - <a href="https://github.com/Adam-Blf">GitHub</a> - <a href="https://www.linkedin.com/in/adambeloucif/">LinkedIn</a></sub>
 </p>
 
 
