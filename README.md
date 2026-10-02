@@ -40,6 +40,17 @@ flowchart TB
     Walk --> Content
     Walk --> Tree
     Walk --> Export
+
+    classDef c0 fill:#2563eb,stroke:#1e3a8a,stroke-width:2px,color:#ffffff
+    classDef c1 fill:#7c3aed,stroke:#4c1d95,stroke-width:2px,color:#ffffff
+    classDef c2 fill:#0891b2,stroke:#164e63,stroke-width:2px,color:#ffffff
+    classDef c3 fill:#16a34a,stroke:#14532d,stroke-width:2px,color:#ffffff
+    classDef c4 fill:#d97706,stroke:#78350f,stroke-width:2px,color:#ffffff
+    class HTML c0
+    class CSS,JS c1
+    class Picker c2
+    class Walk c3
+    class Content,Tree,Export c4
 ```
 
 ### ✨ Fonctionnalités
